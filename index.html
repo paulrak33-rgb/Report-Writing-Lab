@@ -343,7 +343,7 @@ function reset(){stop();start=null;elapsed=0;done=false;target=makeTarget();inpu
 input.addEventListener('input',()=>{if(done)return;if(input.value.length>target.length)input.value=input.value.slice(0,target.length);if(start===null&&input.value.length){start=performance.now();interval=setInterval(tick,100)}paint();tick();if(input.value.length===target.length)finish('Model completed!')});
 model.addEventListener('change',refreshSections);section.addEventListener('change',reset);limit.addEventListener('change',reset);$('type-reset').addEventListener('click',()=>{reset();input.focus()});$('type-next').addEventListener('click',()=>{if(section.selectedIndex<section.options.length-1)section.selectedIndex++;else section.selectedIndex=0;reset();input.focus()});copy.addEventListener('click',()=>input.focus());refreshSections();
 })();
-</script></body></html>`;
+<\/script></body></html>`;
  const w=window.open('','_blank');if(!w){alert('Please allow pop-ups for this site, then try again.');return}
  w.document.open();w.document.write(doc);w.document.close();w.focus();
 }
